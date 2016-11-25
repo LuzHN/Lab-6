@@ -54,3 +54,9 @@ int Equipo :: getGoles(){
 Equipo :: ~Equipo(){
 	
 }
+
+string Equipo::toString()const{
+	stringstream ss;
+	ss <<"Nombre del equipo: " <<NombreEquipo <<" ; Entrenador: "<< entrenador->toString()<<" ; Nivel defensa: "<<NivelDefensa<<" ; Nivel Ofensa: "<<NivelOfensa;
+	return ss.str();
+}

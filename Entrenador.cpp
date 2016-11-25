@@ -30,7 +30,7 @@ void Entrenador::setTactica(string pTactica){
 
 string Entrenador::toString()const{
 	stringstream ss;
-	ss << "Entrenador: " << Nombre << ", " << Apellido<<", "<<", "<< SobreNombre<< ", "<<Nivel<<", "<<tactica;
+	ss << Nombre;
 	return ss.str();
 }
 

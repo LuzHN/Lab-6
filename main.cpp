@@ -4,10 +4,13 @@
 #include "Equipo.h"
 #include "Entrenador.h"
 #include <vector>
+#include <stdlib.h>
+#include <time.h>
 
 using namespace std;
 
 vector<Equipo*> equipos;
+Vector<Partido*> partidos;
 
 int Menu();
 
@@ -54,6 +57,9 @@ int main(){
 
 					equipos.push_back(  new Equipo( nombreEquipo, entrenador) );
 
+					int nivelDefensa=nivelentrenador;
+					int nivelOfensa=nivelentrenador+(nivelentrenador*1.10);
+
 					for (int i = 0; i < 11; ++i){
 						cout << endl << "Ingrese nombre del jugador: ";
 						string nombreJug = "";
@@ -83,8 +89,16 @@ int main(){
 						Jugador* jug = new Jugador(nombreJug, apellidoJug, sobrenombrejugador, nivelJugador, posicionJugador);
 
 						equipos.at(equipos.size() - 1) -> addJugador(jug);
+
+						nivelDefensa+=nivelJugador;
+						nivelOfensa+=nivelJugador;
+
 						
 					}
+					equipos.at(equipos.size()-1)->setNivelDefensa(nivelDefensa);
+					equipos.at(equipos.size()-1)->setNivelOfensa(nivelOfensa);
+
+					equipos.at(equipos.size()-1)->setGoles(0);
 				}			
 
 
@@ -94,6 +108,52 @@ int main(){
 				break;
 			}
 			case 2:{
+
+				int cantidad=equipos.size();
+
+				if (cantidad==4){
+					cout<< endl << "Ingrese posicion del equipo 1 para este partido: "<<endl;
+					int posicionEquipo1=0;
+
+					for (int i = 0; i < equipos.size(); ++i){
+						cout<<endl<<"Equipo #"<<i<<endl<<equipos.at(i)->toString;
+					}
+					cin>>posicionEquipo1;
+
+					cout<< endl << "Ingrese posicion del equipo 2 para este partido: "<<endl;
+					int posicionEquipo2=0;
+					for (int i = 0; i < equipos.size(); ++i){
+						if (i==posicionEquipo1){
+							
+						}else{
+							cout<<endl<<"Equipo #"<<i<<endl<<equipos.at(i)->toString;
+						}	
+					}
+
+					cin >> posicionEquipo2;
+					if (posicionEquipo2 == posicionEquipo1){
+						cout << endl << "No puede pelear contra el mismo equipo";
+					} else{
+						srand((unsigned)time(NULL));
+						int r = (rand() % 2+0);
+						if (r==1){
+							Partido* part=new Partido( equipos.at(posicionEquipo1),equipos.at(posicionEquipo2),0,true);
+							partidos.push_back(part);
+
+						}else if (r==0){
+							Partido* part=new Partido( equipos.at(posicionEquipo1),equipos.at(posicionEquipo2),0,false);
+							partidos.push_back(part);
+						} else {
+							cout<<"No se pudo agregar el partido correctamente"<<endl;
+						}
+						
+					}
+
+						
+				}else{
+					cout<<"Ocupa agregar mas equipos"<<endl;
+				}
+
 				break;
 
 			}
