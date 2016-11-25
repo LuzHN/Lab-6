@@ -6,9 +6,6 @@
 using std::string;
 using std::stringstream;
 
-Entrenador::Entrenador(string name,string apellido,string sobreNombre,int nivel,string tactica):name(name),apellido(apellido),sobreNombre(sobreNombre), numero(numero),tactica(tactica){
-}
-
 Entrenador::Entrenador(string name,string apellido,string sobreNombre,int nivel,string tactica):Persona(name,apellido,sobreNombre,nivel){
   this->tactica = tactica;
 }

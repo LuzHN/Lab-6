@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "Jugador.h"
+#include "Entrenador.h"
 #ifndef Equipo_H
 #define Equipo_H
 
@@ -11,7 +12,7 @@ class Equipo{
 
 	protected:
 		string NombreEquipo;
-		//Entrenador* entrenador;
+		Entrenador* entrenador;
 		vector<Jugador*> listaJugadores;
 		int NivelDefensa;
 		int NivelOfensa;
