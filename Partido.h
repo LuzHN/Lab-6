@@ -1,4 +1,5 @@
-#pragma once
+#ifndef Partido_h
+#define Partido_h
 #include "Equipo.h"
 
 #include <sstream>
@@ -11,9 +12,13 @@ class Partido{
 		int Marcador;
 		bool Local;
 	public:
-		void setMarcador();
+		Partido(Equipo*, Equipo*, int, bool);
+		virtual ~Partido();
+		void setMarcador(int);
 		int getMarcador();
-		void setLocal();
+		void setLocal(bool);
 		bool getLocal();
 
 };
+
+#endif

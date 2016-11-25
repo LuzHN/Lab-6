@@ -17,7 +17,7 @@ class Jugador : public Persona {
 		string PosicionJugador;
 	
 	public:
-		Jugador();
+		Jugador(string, string, string, int, string);
 		virtual ~Jugador();
 
 		void setPosicionJugador(string);

@@ -1,7 +1,14 @@
 #include "Equipo.h"
+#include "Persona.h"
 
 Equipo :: Equipo(){
 
+}
+
+Equipo :: Equipo (string Nombre, Entrenador* en){
+	
+	NombreEquipo = Nombre;
+	entrenador = en;
 }
 
 void Equipo :: setNombreEquipo(string pNombreEquipo){
@@ -42,4 +49,8 @@ void Equipo :: setGoles(int pGoles){
 
 int Equipo :: getGoles(){
 	return Goles;
+}
+
+Equipo :: ~Equipo(){
+	
 }

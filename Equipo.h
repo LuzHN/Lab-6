@@ -1,7 +1,9 @@
 #include <iostream>
 #include <vector>
+#include "Persona.h"
 #include "Jugador.h"
 #include "Entrenador.h"
+
 #ifndef Equipo_H
 #define Equipo_H
 
@@ -20,7 +22,8 @@ class Equipo{
 
 	public:
 		Equipo();
-		~Equipo();
+		Equipo(string, Entrenador*);
+		virtual ~Equipo();
 
 		void setNombreEquipo(string);
 		string getNombreEquipo();

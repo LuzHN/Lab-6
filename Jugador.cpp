@@ -4,9 +4,13 @@
 
 using std::string;
 
-Jugador :: Jugador(){
+Jugador :: Jugador(string nom, string ap, string sb, int niv, string pos){
 
-
+	Nombre = nom;
+	Apellido = ap;
+	SobreNombre = sb;
+	Nivel = niv;
+	PosicionJugador = pos;
 }
 
 

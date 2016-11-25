@@ -6,8 +6,15 @@
 using std::string;
 using std::stringstream;
 
-Entrenador::Entrenador(string name,string apellido,string sobreNombre,int nivel,string tactica):Persona(name,apellido,sobreNombre,nivel){
-  this->tactica = tactica;
+Entrenador :: Entrenador(){
+	
+}
+
+Entrenador::Entrenador(string n, string ap, string sb, int nivel, string tac){
+  	Nombre = n;
+  	Apellido = ap;
+  	SobreNombre = sb;
+  	Nivel = nivel;
 }
 
 Entrenador::~Entrenador(){
@@ -23,7 +30,7 @@ void Entrenador::setTactica(string pTactica){
 
 string Entrenador::toString()const{
 	stringstream ss;
-	ss << "Entrenador: " << name << ", " << apellido<<", "<<", "<<sobreNombre<< ", "<<nivel<<", "<<tactica;
+	ss << "Entrenador: " << Nombre << ", " << Apellido<<", "<<", "<< SobreNombre<< ", "<<Nivel<<", "<<tactica;
 	return ss.str();
 }
 

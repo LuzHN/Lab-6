@@ -14,7 +14,7 @@ Partido::~Partido(){
 }
 
 int Partido::getMarcador(){
-	return marcador;
+	return Marcador;
 }
 
 void Partido::setMarcador(int pMarcador){
