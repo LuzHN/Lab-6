@@ -10,11 +10,11 @@ using std::string;
 class Jugador{
 
 	protected:
-		string nombreJugador;
-		string apellidoJugador;
-		string sobrenombreJugador;
-		int nivelJugador;
-		string posicionJugador;
+		string NombreJugador;
+		string ApellidoJugador;
+		string SobreNombreJugador;
+		int NivelJugador;
+		string PosicionJugador;
 	
 	public:
 		Jugador();
@@ -24,7 +24,7 @@ class Jugador{
 		string getNombreJugador();
 
 		void setApellidoJugador(string);
-		string getApellidoJugador(string);
+		string getApellidoJugador();
 
 		void setSobreNombreJugador(string);
 		string getSobreNombreJugador();
@@ -32,7 +32,7 @@ class Jugador{
 		void setNivelJugador(int);
 		int getNivelJugador();
 
-		void setPosicionJugador();
+		void setPosicionJugador(string);
 		string getPosicionJugador();
 
 };
