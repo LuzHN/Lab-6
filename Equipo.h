@@ -42,7 +42,9 @@ class Equipo{
 		void setGoles(int);
 		int getGoles();
 
-		virtual string toString()const;
+		
+
+		virtual string toString();
 
 
 };

@@ -10,14 +10,20 @@ class Partido{
 		Equipo* equipo1;
 		Equipo* equipo2;
 		int Marcador;
-		bool Local;
+		Equipo* Local;
 	public:
-		Partido(Equipo*, Equipo*, int, bool);
+		Partido(Equipo*, Equipo*, int, Equipo*);
 		virtual ~Partido();
+
+		Equipo* getEquipo1();
+		Equipo* getEquipo2();
+
 		void setMarcador(int);
 		int getMarcador();
-		void setLocal(bool);
-		bool getLocal();
+		void setLocal(Equipo*);
+		Equipo* getLocal();
+
+		virtual string toString();
 
 };
 

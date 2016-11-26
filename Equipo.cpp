@@ -1,5 +1,10 @@
 #include "Equipo.h"
 #include "Persona.h"
+#include "Entrenador.h"
+
+#include <sstream>
+
+using std::stringstream;
 
 Equipo :: Equipo(){
 
@@ -55,8 +60,8 @@ Equipo :: ~Equipo(){
 	
 }
 
-string Equipo::toString()const{
+string Equipo::toString(){
 	stringstream ss;
-	ss <<"Nombre del equipo: " <<NombreEquipo <<" ; Entrenador: "<< entrenador->toString()<<" ; Nivel defensa: "<<NivelDefensa<<" ; Nivel Ofensa: "<<NivelOfensa;
+	ss <<"Nombre del equipo: " <<NombreEquipo <<" ; Entrenador: "<< entrenador->toString()<<" ; Nivel defensa: "<<NivelDefensa<<" ; Nivel Ofensa: "<<NivelOfensa << " ; Goles: " << Goles;
 	return ss.str();
 }

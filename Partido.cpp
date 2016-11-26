@@ -1,8 +1,13 @@
 
 #include "Partido.h"
+#include <iostream>
+#include <sstream>
+
+using std::stringstream;
+using std::endl;
 
 
-Partido::Partido(Equipo* equi1,Equipo* equi2,int marcadoor,bool locall){
+Partido::Partido(Equipo* equi1,Equipo* equi2,int marcadoor, Equipo* locall){
 	equipo1=equi1;
 	equipo2=equi2;
 	Marcador=marcadoor;
@@ -21,11 +26,29 @@ void Partido::setMarcador(int pMarcador){
 	this->setMarcador(pMarcador);
 }
 
-bool Partido::getLocal(){
+Equipo* Partido::getLocal(){
 	return Local;
 }
 
-void Partido::setLocal(bool pLocal){
+void Partido::setLocal(Equipo* pLocal){
 	this->setLocal(pLocal);
 }
+
+string Partido:: toString(){
+	stringstream ss;
+
+	ss << endl << " Es local? :" << Local << endl << "Equipo #1: " << equipo1 -> toString() << endl << "Equipo #2: " << equipo2 -> toString()  << endl;
+
+	return ss.str();
+}
+
+Equipo* Partido :: getEquipo1(){
+	return equipo1;
+}
+
+Equipo* Partido :: getEquipo2(){
+	return equipo2;
+}
+
+
 
