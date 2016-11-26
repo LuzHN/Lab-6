@@ -37,7 +37,7 @@ void Partido::setLocal(Equipo* pLocal){
 string Partido:: toString(){
 	stringstream ss;
 
-	ss << endl << " Es local? :" << Local << endl << "Equipo #1: " << equipo1 -> toString() << endl << "Equipo #2: " << equipo2 -> toString()  << endl;
+	ss << endl << endl << "Equipo #1: " << equipo1 -> toString() << endl << "Equipo #2: " << equipo2 -> toString()  << endl;
 
 	return ss.str();
 }
